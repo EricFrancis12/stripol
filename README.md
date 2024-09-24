@@ -14,13 +14,13 @@ import (
 )
 
 func main() {
-    i := stripol.New("{{", "}}")
+    s := stripol.New("{{", "}}")
 
-    i.RegisterVar("NAME", "Mike Tyson")
-    i.RegisterVar("PET", "tiger")
+    s.RegisterVar("NAME", "Mike Tyson")
+    s.RegisterVar("PET", "tiger")
 
     str := "{{ NAME }} has a pet {{ PET }}."
-    result := i.Eval(str)
+    result := s.Eval(str)
 
     fmt.Println(result)
     // Mike Tyson has a pet tiger.
