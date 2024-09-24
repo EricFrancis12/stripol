@@ -2,7 +2,7 @@
 
 An extremely simple & easy-to-use string interpolation package.
 
-# Example
+## Example
 
 ```bash
 package main
