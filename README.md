@@ -4,7 +4,7 @@ An extremely simple & easy-to-use string interpolation package.
 
 ## Example
 
-```bash
+```go
 package main
 
 import (
@@ -35,6 +35,6 @@ go get github.com/EricFrancis12/stripol
 
 ## Testing
 
-```
+```bash
 make test
 ```
