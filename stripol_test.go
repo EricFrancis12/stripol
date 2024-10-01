@@ -32,6 +32,24 @@ func TestStrIpol(t *testing.T) {
 		assert.Equal(t, "tigers are my favorite animal.", result)
 	})
 
+	t.Run("Basic substitution with no spaces", func(t *testing.T) {
+		s.RegisterVar("FAV_ANIMAL", "tigers")
+		result := s.Eval("{{FAV_ANIMAL}} are my favorite animal.")
+		assert.Equal(t, "tigers are my favorite animal.", result)
+	})
+
+	t.Run("Basic substitution with left space", func(t *testing.T) {
+		s.RegisterVar("FAV_ANIMAL", "tigers")
+		result := s.Eval("{{ FAV_ANIMAL}} are my favorite animal.")
+		assert.Equal(t, "tigers are my favorite animal.", result)
+	})
+
+	t.Run("Basic substitution with left space", func(t *testing.T) {
+		s.RegisterVar("FAV_ANIMAL", "tigers")
+		result := s.Eval("{{FAV_ANIMAL }} are my favorite animal.")
+		assert.Equal(t, "tigers are my favorite animal.", result)
+	})
+
 	t.Run("Variable not registered", func(t *testing.T) {
 		result := s.Eval("{{ NON_EXISTENT_VAR }} is not registered.")
 		assert.Equal(t, " is not registered.", result)
