@@ -44,7 +44,7 @@ func TestStrIpol(t *testing.T) {
 		assert.Equal(t, "tigers are my favorite animal.", result)
 	})
 
-	t.Run("Basic substitution with left space", func(t *testing.T) {
+	t.Run("Basic substitution with right space", func(t *testing.T) {
 		s.RegisterVar("FAV_ANIMAL", "tigers")
 		result := s.Eval("{{FAV_ANIMAL }} are my favorite animal.")
 		assert.Equal(t, "tigers are my favorite animal.", result)
